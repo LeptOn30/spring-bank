@@ -14,13 +14,11 @@
 </head>
 <body>
 <div class="container">
-    <h2>Welcome, <span th:text="${name}">Customer</span>!</h2>
-    <p>We are excited to have you on board at <b>Phegon Bank</b>.</p>
-    <p>Start enjoying seamless deposits, withdrawals, transfers, and monthly statements.</p>
-    <p><b>Your financial journey starts here 🚀</b></p>
-    <div class="footer">
-        © 2026 Phegon Bank | Your Trusted Partner
-    </div>
+    <h2 th:text="#{html.welcome1(${#name})}">Welcome, <span th:text="${#name}">Customer</span>!</h2>
+    <p th:text="#{html.welcome2}">We are excited to have you on board at <b th:text="#{app.title}">Spring Bank</b>.</p>
+    <p th:text="#{html.welcome3}">Start enjoying seamless deposits, withdrawals, transfers, and monthly statements.</p>
+    <p><b th:text="#{html.welcome4}">Your financial journey starts here 🚀</b></p>
+    <div class="footer" th:text="#{html.footer(${#app.name})}">© 2026 <p> th:text="${#app.name}>Spring Bank</p> | Security First</div>
 </div>
 </body>
 </html>

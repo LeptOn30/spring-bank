@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "default.timezone.id",
+  "type": "java.lang.String",
+  "description": "The default Java timezone ID for the application."
+}]}

@@ -1,5 +1,17 @@
 package com.dgw.backend.auth_users.services.impl;
 
+import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.dgw.backend.account.entity.Account;
 import com.dgw.backend.account.services.AccountService;
 import com.dgw.backend.auth_users.dtos.LoginRequest;
@@ -22,19 +34,9 @@ import com.dgw.backend.res.Response;
 import com.dgw.backend.role.entity.Role;
 import com.dgw.backend.role.repo.RoleRepo;
 import com.dgw.backend.security.TokenService;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 @Service
@@ -101,7 +103,7 @@ public class AuthServiceImpl implements AuthService {
 
         NotificationDTO notificationDTO = NotificationDTO.builder()
                 .recipient(savedUser.getEmail())
-                .subject("Welcome to Phegon Bank 🎉")
+                .subject("Welcome to Spring Bank 🎉")
                 .templateName("welcome")
                 .templateVariables(vars)
                 .build();

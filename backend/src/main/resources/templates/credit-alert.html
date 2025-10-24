@@ -14,18 +14,16 @@
 </head>
 <body>
 <div class="container">
-    <h2>Credit Alert</h2>
-    <p>Dear <b th:text="${name}">Customer</b>,</p>
+    <h2 th:text="#{credit.alert1}">Credit Alert</h2>
+    <p th:text="#{hello.user2(${#name})}">Dear <span th:text="${#name}">User</span>,</p>
     <div class="alert">
-        <p>You account has been credited with <b>$<span th:text="${amount}"></span></b></p>
-        <p>Account Number: <b th:text="${accountNumber}"></b></p>
-        <p>Date: <span th:text="${date}"></span></p>
-        <p>Available Balance: <b>$<span th:text="${balance}"></span></b></p>
+        <p th:text="#{credit.alert2}">Your account has been credited with <b>$<span th:text="${amount}"></span></b></p>
+        <p th:text="#{credit.account}">Account Number: <b th:text="${accountNumber}"></b></p>
+        <p th:text="#{credit.date}">Date: <span th:text="${date}"></span></p>
+        <p th:text="#{credit.balance}">Available Balance: <b>$<span th:text="${balance}"></span></b></p>
     </div>
-    <p>Thank you for banking with us.</p>
-    <div class="footer">
-        © 2026 Phegon Bank | Secure Online Banking
-    </div>
+    <p th:text="#{html.thankyou}">Thank you for banking with us.</p>
+    <div class="footer" th:text="#{html.footer(${#app.name})}">© 2026 <p> th:text="${#app.name}>Spring Bank</p> | Security First</div>
 </div>
 </body>
 </html>
